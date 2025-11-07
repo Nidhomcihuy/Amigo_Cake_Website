@@ -815,7 +815,7 @@ a:focus {
   width: 100%;
   /* min-height: 100% tidak diperlukan jika sudah ada height: 100% */
 }
-<<<<<<< HEAD
+
 .map-address {
   text-align: center;       /* Rata tengah */
   margin-top: 70px;         /* Jarak antara map dan teks */
@@ -823,8 +823,7 @@ a:focus {
   font-size: 32px;
   color: #000;
 }
-=======
->>>>>>> d68b6db8b0882b239a4ed21da8606ca2646715b6
+
 
 /* client section start */
 .client_section .heading_container {
