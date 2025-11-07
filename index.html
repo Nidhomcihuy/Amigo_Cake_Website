@@ -32,6 +32,36 @@
 
 </head>
 
+<script>
+  // Ketika halaman dimuat, ambil data menu dari backend
+  fetch('http://localhost:3000/api/menu')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.querySelector('.filters-content .row');
+      container.innerHTML = ''; // kosongkan isi lama
+
+      data.forEach(item => {
+        const card = `
+          <div class="col-sm-6 col-lg-4 all">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/defaultcake.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>${item.nama}</h5>
+                <div class="options">
+                  <h6>Rp. ${item.harga.toLocaleString('id-ID')}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        container.innerHTML += card;
+      });
+    })
+    .catch(error => console.error("Gagal memuat data:", error));
+</script> 
+
 <body>
 
   <div class="hero_area">

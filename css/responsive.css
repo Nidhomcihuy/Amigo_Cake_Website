@@ -1,97 +1,144 @@
-@media (max-width: 1300px) {}
+/*
+ * RESPONSIVE CSS FOR AMIGO CAKE
+ * Berbasis Mobile-First (kecuali untuk override layout yang spesifik)
+ */
 
-@media (max-width: 1120px) {}
-
-@media (max-width: 992px) {
-  .hero_area {
-    min-height: auto;
-  }
-
-  .custom_nav-container .navbar-nav {
-    padding-top: 15px;
-padding-left: 0;
-    align-items: center;
-  }
-
-  .user_option{
-    justify-content: center;
-    margin-top: 15px;
-  }
-  .custom_nav-container .navbar-nav .nav-item .nav-link {
-    padding: 5px 25px;
-    margin: 5px 0;
-  }
-
-  .slider_section .carousel-indicators {
-    margin-top: 45px;
-  }
-
-  .offer_section .box {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .offer_section .box .img-box {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-}
-
-@media (max-width: 767px) {
-
-  .about_section .detail-box,
-  .book_section .form_container {
-    margin-bottom: 45px;
-  }
-
-  .about_section .row {
-    flex-direction: column-reverse;
-  }
-
-  .offer_section .box {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  .offer_section .box .img-box {
-    margin-right: 15px;
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 576px) {}
-
-@media (max-width: 480px) {}
-
-@media (max-width: 430px) {
-  .offer_section .box {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .offer_section .box .img-box {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-}
-
-@media (max-width: 376px) {
-  .slider_section .detail-box h1 {
-    font-size: 3rem;
-  }
-}
-
+/* =======================================================
+ * Large Devices (Desktop - min-width: 1200px)
+ * Perbaikan Container Width (Sesuai kode Anda)
+ * ======================================================= */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 1170px;
-  }
+    .container {
+        /* Memastikan lebar container tetap konsisten di layar lebar */
+        max-width: 1170px;
+    }
 }
 
 
-@media (min-width:576px) and (max-width:991px) {
-  .rent_solution_container .col-md-4.col-sm-6 {
-    float: left;
-    width: 50%;
-  }
+/* =======================================================
+ * Medium Devices (Tablet Vertikal ke Bawah - max-width: 991px)
+ * Menampilkan Menu Navbar dalam format mobile
+ * ======================================================= */
+@media (max-width: 991px) {
+    /* Navbar Toggle */
+    .hero_area {
+        min-height: auto;
+    }
+
+    .custom_nav-container .navbar-nav {
+        /* Membuat menu terpusat saat di-toggle */
+        padding-top: 15px;
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item .nav-link {
+        padding: 5px 25px;
+        margin: 5px 0;
+    }
+
+    .user_option {
+        /* Memastikan opsi pengguna (keranjang, login, search) berada di tengah */
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 20px; /* Tambahkan sedikit ruang di bawah opsi */
+    }
+
+    /* Slider/Carousel */
+    .slider_section .carousel-indicators {
+        margin-top: 45px;
+    }
+
+    /* Food Section - Filter Description */
+    .filters_deskripsi {
+        padding: 15px;
+    }
+}
+
+/* =======================================================
+ * Small Devices (Ponsel Landscape/Tablet Kecil - max-width: 767px)
+ * Fokus pada penumpukan elemen dan padding
+ * ======================================================= */
+@media (max-width: 767px) {
+    /* Umum */
+    .heading_container h2 {
+        /* Mengurangi ukuran heading di perangkat kecil */
+        font-size: 2rem;
+    }
+
+    /* About Section */
+    .about_section .detail-box,
+    .book_section .form_container {
+        /* Menambah jarak bawah antar section yang menumpuk */
+        margin-bottom: 45px;
+    }
+
+    .about_section .row {
+        /* Mengubah urutan tampilan agar gambar/foto di atas teks (jika diperlukan) */
+        flex-direction: column-reverse;
+    }
+    
+    /* Book Section */
+    .book_section .map_container {
+        /* Jarak untuk map yang berada di bawah form */
+        margin-top: 30px; 
+    }
+
+    /* Footer Section */
+    .footer_section .footer-col {
+        /* Memberi jarak pada kolom footer saat menumpuk */
+        margin-bottom: 30px;
+        text-align: center; /* Meratakan teks footer ke tengah */
+    }
+    .footer_section .footer_social {
+        justify-content: center;
+    }
+}
+
+/* =======================================================
+ * Extra Small Devices (Ponsel Vertikal - max-width: 575px)
+ * Perubahan drastis layout yang tadinya 2 kolom menjadi 1 kolom
+ * ======================================================= */
+@media (max-width: 575px) {
+    /* Slider Section */
+    .slider_section .detail-box h1 {
+        /* Mengurangi ukuran font untuk layar ponsel */
+        font-size: 2.5rem;
+    }
+
+    /* Food Section (Menu Filter) */
+    .filters_menu {
+        /* Memungkinkan scroll horizontal untuk filter agar tidak memakan banyak ruang vertikal */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .filters_menu li {
+        /* Memastikan item filter tidak menyusut */
+        flex-shrink: 0; 
+        padding: 8px 12px;
+    }
+
+    /* Offer Section (Dibutuhkan penumpukan) */
+    .offer_section .box {
+        /* Menumpuk konten di dalam box tawaran */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .offer_section .box .img-box {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* =======================================================
+ * Very Small Devices (Ponsel Sangat Kecil - max-width: 375px)
+ * ======================================================= */
+@media (max-width: 375px) {
+    .slider_section .detail-box h1 {
+        /* Penyesuaian font untuk layar paling kecil */
+        font-size: 2.2rem;
+    }
 }
