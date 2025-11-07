@@ -798,6 +798,18 @@ a:focus {
   height: 345px;
 }
 
+/* Pastikan elemen yang membungkus peta (map_container) memiliki margin bawah */
+.map_container {
+    margin-bottom: 50px; 
+    /* Jarak 50px di bawah peta */
+}
+
+/* Pastikan elemen footer memiliki margin atas */
+.footer_section {
+    margin-top: 50px; 
+    /* Jarak 50px di atas footer, mendorongnya menjauh dari konten di atas */
+}
+
 .book_section .map_container #googleMap {
   height: 100%;
   width: 100%;
